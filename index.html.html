@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>House of ReeKa | Top Floor 4BHK · Gurugram</title>
+  <meta name="description" content="House of ReeKa — a spacious top-floor 4BHK retreat in Gurugram. 4 bedrooms, 4 bathrooms, balcony views, daily housekeeping, 60-inch Smart TV, free parking. Up to 8 guests." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #f8f4ee;
+      --warm-white: #fdfaf6;
+      --dark: #1a1714;
+      --mid: #3d3832;
+      --muted: #7a7268;
+      --border: rgba(58,52,44,0.12);
+      --accent: #b5622a;
+      --accent-light: #f0ebe3;
+      --gold: #c9993a;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--warm-white);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 3rem;
+      background: rgba(253,250,246,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px; font-weight: 400; letter-spacing: 1px;
+      color: var(--dark);
+    }
+    .logo em { font-style: italic; color: var(--accent); }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links a {
+      text-decoration: none; font-size: 13px; color: var(--muted);
+      letter-spacing: 0.5px; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--dark); }
+    .nav-book {
+      background: var(--dark); color: #fff; border: none;
+      border-radius: 4px; padding: 10px 22px;
+      font-family: 'DM Sans', sans-serif; font-size: 13px;
+      cursor: pointer; letter-spacing: 0.5px;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .nav-book:hover { background: var(--accent); transform: translateY(-1px); }
+
+    /* HERO */
+    .hero {
+      height: 100vh; min-height: 650px;
+      position: relative; display: flex; align-items: flex-end;
+      overflow: hidden;
+    }
+    .hero-img {
+      position: absolute; inset: 0;
+      background: url('https://a0.muscache.com/im/pictures/hosting/Hosting-1649839020830181649/original/f09ce15d-3ab0-4af2-a48f-4ba2d5a32454.png?im_w=1440') center/cover no-repeat;
+      transform: scale(1.04);
+      animation: heroZoom 14s ease-out forwards;
+    }
+    @keyframes heroZoom { to { transform: scale(1); } }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(20,16,12,0.82) 0%, rgba(20,16,12,0.3) 55%, rgba(20,16,12,0.1) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      padding: 5rem 3rem; max-width: 900px;
+      animation: fadeUp 1s 0.3s both;
+    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+      color: rgba(255,255,255,0.6); margin-bottom: 1.2rem;
+    }
+    .hero-eyebrow::before {
+      content: ''; width: 28px; height: 1px; background: var(--gold); display: block;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(42px, 6vw, 72px);
+      font-weight: 300; line-height: 1.08;
+      color: #fff; margin-bottom: 1.25rem;
+      letter-spacing: -1px;
+    }
+    .hero h1 em { font-style: italic; color: var(--gold); }
+    .hero-desc { font-size: 15px; color: rgba(255,255,255,0.72); margin-bottom: 2rem; max-width: 540px; line-height: 1.6; }
+    .hero-pills { display: flex; gap: 10px; flex-wrap: wrap; }
+    .hero-pill {
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 3px; padding: 6px 14px;
+      font-size: 12px; color: rgba(255,255,255,0.8); letter-spacing: 0.5px;
+    }
+    .hero-scroll {
+      position: absolute; bottom: 2.5rem; right: 3rem; z-index: 2;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+    }
+    .scroll-line {
+      width: 1px; height: 52px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse { 0%,100%{opacity:0.4;transform:scaleY(1)} 50%{opacity:1;transform:scaleY(0.6)} }
+
+    /* BOOKING STRIP */
+    .booking-strip {
+      background: var(--dark); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      padding: 1.4rem 3rem; gap: 2.5rem; flex-wrap: wrap;
+    }
+    .bs-item { text-align: center; }
+    .bs-label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.5; margin-bottom: 3px; }
+    .bs-value { font-size: 15px; font-weight: 500; }
+    .bs-divider { width: 1px; height: 36px; background: rgba(255,255,255,0.15); }
+    .bs-btn {
+      background: var(--accent); color: #fff; border: none;
+      border-radius: 4px; padding: 11px 28px;
+      font-family: 'DM Sans', sans-serif; font-size: 14px;
+      cursor: pointer; letter-spacing: 0.5px; transition: background 0.2s;
+    }
+    .bs-btn:hover { background: #9e4e1f; }
+
+    /* SECTION LAYOUT */
+    .section { padding: 5rem 3rem; max-width: 1200px; margin: 0 auto; }
+    .eyebrow {
+      font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 0.75rem;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .eyebrow::after { content: ''; flex: 1; max-width: 40px; height: 1px; background: var(--accent); }
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 4vw, 48px); font-weight: 400;
+      line-height: 1.15; margin-bottom: 1.5rem; letter-spacing: -0.5px;
+    }
+    h2 em { font-style: italic; }
+    .section-intro { font-size: 16px; color: var(--muted); line-height: 1.7; max-width: 600px; margin-bottom: 2.5rem; }
+    .divider-line { height: 1px; background: var(--border); margin: 0; }
+
+    /* GALLERY */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr;
+      grid-template-rows: 260px 260px;
+      gap: 6px; border-radius: 8px; overflow: hidden;
+    }
+    .gallery-grid img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.5s ease, filter 0.3s;
+      cursor: pointer;
+    }
+    .gallery-grid img:hover { transform: scale(1.04); filter: brightness(1.05); }
+    .gallery-grid .main-img { grid-row: 1 / 3; }
+    .gallery-more {
+      display: flex; align-items: center; justify-content: center;
+      background: var(--dark); cursor: pointer;
+      font-size: 13px; letter-spacing: 1px; color: rgba(255,255,255,0.7);
+      transition: background 0.2s;
+    }
+    .gallery-more:hover { background: var(--accent); }
+
+    /* HIGHLIGHTS */
+    .highlights { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 2.5rem; }
+    .hl-card {
+      border: 1px solid var(--border); border-radius: 6px;
+      padding: 1.75rem; background: var(--warm-white);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .hl-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+    .hl-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px; font-weight: 300; color: var(--accent);
+      opacity: 0.5; margin-bottom: 0.75rem; line-height: 1;
+    }
+    .hl-title { font-size: 15px; font-weight: 500; margin-bottom: 6px; }
+    .hl-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    /* ROOMS */
+    .rooms-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.25rem; margin-top: 2.5rem; }
+    .room-card {
+      border-radius: 6px; overflow: hidden;
+      border: 1px solid var(--border);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .room-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+    .room-img { height: 160px; overflow: hidden; }
+    .room-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+    .room-card:hover .room-img img { transform: scale(1.06); }
+    .room-body { padding: 1rem 1.25rem; }
+    .room-name { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
+    .room-bed { font-size: 12px; color: var(--muted); }
+
+    /* AMENITIES */
+    .amen-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0.75rem; margin-top: 2.5rem; }
+    .amen-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 0.875rem 1.125rem;
+      border: 1px solid var(--border); border-radius: 5px;
+      font-size: 13.5px; background: var(--warm-white);
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .amen-item:hover { background: var(--accent-light); border-color: var(--accent); }
+    .amen-ico { font-size: 18px; flex-shrink: 0; }
+
+    /* LOCATION */
+    .loc-split { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; margin-top: 2.5rem; }
+    .loc-desc { font-size: 15px; line-height: 1.8; color: var(--mid); }
+    .loc-items { display: flex; flex-direction: column; gap: 0.875rem; }
+    .loc-item {
+      display: flex; align-items: center; gap: 14px;
+      padding: 1rem 1.25rem; background: var(--cream);
+      border-radius: 5px; border: 1px solid var(--border);
+    }
+    .loc-ico { font-size: 20px; flex-shrink: 0; }
+    .loc-name { font-size: 14px; font-weight: 500; }
+    .loc-dist { font-size: 12px; color: var(--muted); margin-top: 1px; }
+
+    /* RULES */
+    .rules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2.5rem; }
+    .rule-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 1.125rem 1.25rem; background: var(--cream);
+      border-radius: 5px; font-size: 14px; line-height: 1.5;
+    }
+    .rule-ico { font-size: 17px; flex-shrink: 0; margin-top: 1px; }
+
+    /* HOST */
+    .host-wrap {
+      display: grid; grid-template-columns: auto 1fr; gap: 2.5rem;
+      align-items: start; padding: 2.5rem;
+      background: var(--cream); border-radius: 8px;
+      border: 1px solid var(--border); margin-top: 2.5rem;
+    }
+    .host-avatar {
+      width: 100px; height: 100px; border-radius: 50%; overflow: hidden;
+      border: 3px solid var(--warm-white);
+      box-shadow: 0 0 0 1px var(--border);
+    }
+    .host-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .host-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px; font-weight: 400; margin-bottom: 4px;
+    }
+    .host-meta { font-size: 13px; color: var(--muted); margin-bottom: 1rem; }
+    .host-bio { font-size: 14px; line-height: 1.75; color: var(--mid); max-width: 560px; }
+    .host-stats { display: flex; gap: 2rem; margin-top: 1.25rem; }
+    .host-stat strong { font-size: 20px; font-weight: 500; display: block; }
+    .host-stat span { font-size: 12px; color: var(--muted); }
+
+    /* CTA */
+    .cta-section {
+      background: var(--dark);
+      padding: 5rem 3rem; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(181,98,42,0.2) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .cta-section .eyebrow { justify-content: center; color: var(--gold); }
+    .cta-section .eyebrow::after { display: none; }
+    .cta-section h2 { color: #fff; font-size: clamp(32px, 4vw, 52px); margin-bottom: 1rem; }
+    .cta-section p { font-size: 16px; color: rgba(255,255,255,0.55); margin-bottom: 2.5rem; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+    .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--accent); color: #fff; border: none;
+      border-radius: 5px; padding: 14px 34px;
+      font-family: 'DM Sans', sans-serif; font-size: 15px;
+      cursor: pointer; letter-spacing: 0.3px; transition: background 0.2s, transform 0.1s;
+    }
+    .btn-primary:hover { background: #9e4e1f; transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent; color: #fff;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 5px; padding: 14px 34px;
+      font-family: 'DM Sans', sans-serif; font-size: 15px;
+      cursor: pointer; letter-spacing: 0.3px; transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.07); }
+
+    /* FOOTER */
+    footer {
+      background: #111; color: rgba(255,255,255,0.45);
+      padding: 2.25rem 3rem; display: flex;
+      justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+      font-size: 13px;
+    }
+    footer a { color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: rgba(255,255,255,0.8); }
+    .footer-links { display: flex; gap: 2rem; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero-content { padding: 3.5rem 1.5rem; }
+      .section { padding: 3.5rem 1.5rem; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 160px 160px; }
+      .gallery-grid .main-img { grid-column: 1 / 3; }
+      .highlights { grid-template-columns: 1fr 1fr; }
+      .rooms-grid { grid-template-columns: 1fr 1fr; }
+      .amen-grid { grid-template-columns: 1fr 1fr; }
+      .loc-split { grid-template-columns: 1fr; }
+      .rules-grid { grid-template-columns: 1fr; }
+      .host-wrap { grid-template-columns: 1fr; }
+      .booking-strip { gap: 1.25rem; padding: 1.2rem 1.5rem; }
+      .bs-divider { display: none; }
+      footer { flex-direction: column; text-align: center; align-items: center; }
+      .cta-section { padding: 4rem 1.5rem; }
+    }
+    @media (max-width: 600px) {
+      .highlights { grid-template-columns: 1fr; }
+      .rooms-grid { grid-template-columns: 1fr; }
+      .amen-grid { grid-template-columns: 1fr; }
+      .hero-scroll { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">House of <em>ReeKa</em></div>
+    <div class="nav-links">
+      <a href="#gallery">Gallery</a>
+      <a href="#rooms">Rooms</a>
+      <a href="#amenities">Amenities</a>
+      <a href="#location">Location</a>
+      <a href="#host">Host</a>
+    </div>
+    <button class="nav-book" onclick="window.open('https://www.airbnb.co.in/rooms/1649839020830181649','_blank')">Book on Airbnb</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-img"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Top Floor · Gurugram, Haryana</div>
+      <h1>A sanctuary above<br>the <em>city's rhythm</em></h1>
+      <p class="hero-desc">Four bedrooms, balcony views, daily housekeeping, and a Buddha-themed living space — designed for families, groups, and those who deserve to feel truly at home.</p>
+      <div class="hero-pills">
+        <span class="hero-pill">4 Bedrooms</span>
+        <span class="hero-pill">4 Bathrooms</span>
+        <span class="hero-pill">Up to 8 Guests</span>
+        <span class="hero-pill">Entire Apartment</span>
+        <span class="hero-pill">Free Parking</span>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      Scroll
+    </div>
+  </section>
+
+  <!-- BOOKING STRIP -->
+  <div class="booking-strip">
+    <div class="bs-item"><div class="bs-label">Guests</div><div class="bs-value">Up to 8</div></div>
+    <div class="bs-divider"></div>
+    <div class="bs-item"><div class="bs-label">Bedrooms</div><div class="bs-value">4 BHK</div></div>
+    <div class="bs-divider"></div>
+    <div class="bs-item"><div class="bs-label">Bathrooms</div><div class="bs-value">4 full baths</div></div>
+    <div class="bs-divider"></div>
+    <div class="bs-item"><div class="bs-label">Check-in</div><div class="bs-value">From 1:00 PM</div></div>
+    <div class="bs-divider"></div>
+    <div class="bs-item"><div class="bs-label">Check-out</div><div class="bs-value">Before 11:00 AM</div></div>
+    <div class="bs-divider"></div>
+    <button class="bs-btn" onclick="window.open('https://www.airbnb.co.in/rooms/1649839020830181649','_blank')">Check Availability →</button>
+  </div>
+
+  <div class="divider-line"></div>
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <div class="eyebrow">Gallery</div>
+    <h2>Built with patience,<br><em>designed with care</em></h2>
+    <p class="section-intro">Every corner of House of ReeKa was thoughtfully curated — from the serene balconies to the warm, inviting living spaces.</p>
+    <div class="gallery-grid">
+      <img class="main-img" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1649839020830181649/original/f09ce15d-3ab0-4af2-a48f-4ba2d5a32454.png?im_w=1440" alt="Living area" />
+      <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1649839020830181649/original/437fc41c-3949-495b-9cd7-0c73f4fdd5df.jpeg?im_w=720" alt="Bedroom 1" />
+      <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1649839020830181649/original/4bbdb713-512f-4302-84b4-7daf14563158.jpeg?im_w=720" alt="Bedroom 2" />
+      <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1649839020830181649/original/e8647b25-3673-4c71-acc7-a541e8245a72.jpeg?im_w=720" alt="Balcony view" />
+      <div class="gallery-more" onclick="window.open('https://www.airbnb.co.in/rooms/1649839020830181649','_blank')">
+        View all photos →
+      </div>
+    </div>
+
+    <div class="highlights">
+      <div class="hl-card">
+        <div class="hl-num">01</div>
+        <div class="hl-title">Self check-in, full privacy</div>
+        <div class="hl-desc">Arrive on your own terms with keypad entry. The entire 4BHK is exclusively yours — no shared spaces.</div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-num">02</div>
+        <div class="hl-title">Peaceful park views</div>
+        <div class="hl-desc">Top-floor balconies in every bedroom open to lush park views — wake up to calm, natural surroundings.</div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-num">03</div>
+        <div class="hl-title">Hotel-grade housekeeping</div>
+        <div class="hl-desc">Fresh towels daily, caretaker from 8 AM to 7:30 PM, twice-daily cleaning. Stay fresh, stay comfortable.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider-line"></div>
+
+  <!-- ROOMS -->
+  <section class="section" id="rooms">
+    <div class="eyebrow">Bedrooms</div>
+    <h2>Four bedrooms,<br><em>fully appointed</em></h2>
+    <p class="section-intro">Each bedroom has its own balcony, ample storage, and a peaceful ambiance — designed for a restful, private retreat.</p>
+    <div class="rooms-grid">
+      <div class="room-card">
+        <div class="room-img"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1649839020830181649/original/437fc41c-3949-495b-9cd7-0c73f4fdd5df.jpeg?im_w=720" alt="Bedroom 1" /></div>
+        <div class="room-body"><div class="room-name">Bedroom 1</div><div class="room-bed">1 double bed · Balcony</div></div>
+      </div>
+      <div class="room-card">
+        <div class="room-img"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1649839020830181649/original/4bbdb713-512f-4302-84b4-7daf14563158.jpeg?im_w=720" alt="Bedroom 2" /></div>
+        <div class="room-body"><div class="room-name">Bedroom 2</div><div class="room-bed">1 double bed · Balcony</div></div>
+      </div>
+      <div class="room-card">
+        <div class="room-img"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1649839020830181649/original/2d6f49a0-b50f-49de-91a2-3d8ac9592aa6.jpeg?im_w=720" alt="Bedroom 3" /></div>
+        <div class="room-body"><div class="room-name">Bedroom 3</div><div class="room-bed">1 double bed · Balcony</div></div>
+      </div>
+      <div class="room-card">
+        <div class="room-img"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1649839020830181649/original/3e9c697f-73b7-4365-8e27-e99be5eccbaa.jpeg?im_w=720" alt="Bedroom 4" /></div>
+        <div class="room-body"><div class="room-name">Bedroom 4</div><div class="room-bed">1 bunk bed · Kids-friendly</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider-line"></div>
+
+  <!-- AMENITIES -->
+  <section class="section" id="amenities">
+    <div class="eyebrow">Amenities</div>
+    <h2>Everything you need,<br><em>nothing you don't</em></h2>
+    <p class="section-intro">46 amenities thoughtfully selected — from entertainment to connectivity to convenience.</p>
+    <div class="amen-grid">
+      <div class="amen-item"><span class="amen-ico">📺</span>60" Smart TV</div>
+      <div class="amen-item"><span class="amen-ico">🎬</span>Netflix, Prime & Apple TV</div>
+      <div class="amen-item"><span class="amen-ico">📶</span>300 Mbps WiFi</div>
+      <div class="amen-item"><span class="amen-ico">🍳</span>Fully equipped kitchen</div>
+      <div class="amen-item"><span class="amen-ico">🅿️</span>Free parking — 2 spaces</div>
+      <div class="amen-item"><span class="amen-ico">🏙️</span>City & park views</div>
+      <div class="amen-item"><span class="amen-ico">🛁</span>4 private bathrooms</div>
+      <div class="amen-item"><span class="amen-ico">🪴</span>Buddha-themed living room</div>
+      <div class="amen-item"><span class="amen-ico">🍽️</span>Dedicated dining area</div>
+      <div class="amen-item"><span class="amen-ico">🏠</span>Entire home · Full privacy</div>
+      <div class="amen-item"><span class="amen-ico">🚿</span>Fresh towels daily</div>
+      <div class="amen-item"><span class="amen-ico">🌅</span>Balconies in all bedrooms</div>
+    </div>
+  </section>
+
+  <div class="divider-line"></div>
+
+  <!-- LOCATION -->
+  <section class="section" id="location">
+    <div class="eyebrow">Location</div>
+    <h2>Perfectly connected<br><em>in Gurugram</em></h2>
+    <div class="loc-split">
+      <div>
+        <p class="loc-desc">Located near Sector 84, Gurugram, House of ReeKa sits at the intersection of comfort and connectivity. The neighbourhood includes a park, club, and sports facilities within the complex. Major NCR routes — Dwarka Expressway, NH-48, and the Southern Peripheral Road — are easily accessible. Metro stations, hospitals, and shopping malls are all a short drive away.</p>
+        <br>
+        <p class="loc-desc">Whether you're visiting for a family holiday, a corporate trip, or a leisure getaway, the location ensures you're never far from where you need to be.</p>
+      </div>
+      <div class="loc-items">
+        <div class="loc-item"><span class="loc-ico">✈️</span><div><div class="loc-name">IGI Airport & Delhi</div><div class="loc-dist">20–25 min drive</div></div></div>
+        <div class="loc-item"><span class="loc-ico">🛍️</span><div><div class="loc-name">Ambience Mall, Gurgaon</div><div class="loc-dist">15–20 min drive</div></div></div>
+        <div class="loc-item"><span class="loc-ico">🚇</span><div><div class="loc-name">Huda City Centre Metro</div><div class="loc-dist">15–20 min drive</div></div></div>
+        <div class="loc-item"><span class="loc-ico">🏥</span><div><div class="loc-name">Medanta & Artemis Hospitals</div><div class="loc-dist">Short drive</div></div></div>
+        <div class="loc-item"><span class="loc-ico">🛣️</span><div><div class="loc-name">Dwarka Expressway (NPR)</div><div class="loc-dist">Direct access</div></div></div>
+        <div class="loc-item"><span class="loc-ico">🌳</span><div><div class="loc-name">Park, club & sports complex</div><div class="loc-dist">Within the compound</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider-line"></div>
+
+  <!-- RULES -->
+  <section class="section" id="rules">
+    <div class="eyebrow">House Rules</div>
+    <h2>A few simple things<br><em>to keep in mind</em></h2>
+    <div class="rules-grid">
+      <div class="rule-item"><span class="rule-ico">🕐</span><div>Check-in from <strong>1:00 PM</strong> · Check-out before <strong>11:00 AM</strong></div></div>
+      <div class="rule-item"><span class="rule-ico">👥</span><div>Maximum <strong>8 guests</strong> · Only booked guests may stay on the property</div></div>
+      <div class="rule-item"><span class="rule-ico">🎵</span><div>Light music is welcome · Loud music only until <strong>10:00 PM</strong> — residential area</div></div>
+      <div class="rule-item"><span class="rule-ico">🚬</span><div>Smoking is permitted on balconies only — please maintain cleanliness</div></div>
+      <div class="rule-item"><span class="rule-ico">💡</span><div>Switch off lights, AC, and appliances when not in use · Lock doors when stepping out</div></div>
+      <div class="rule-item"><span class="rule-ico">🔒</span><div>Terrace access is restricted to the owner · Locked storage areas are not accessible</div></div>
+    </div>
+  </section>
+
+  <div class="divider-line"></div>
+
+  <!-- HOST -->
+  <section class="section" id="host">
+    <div class="eyebrow">Your Host</div>
+    <h2>Meet <em>Subhi</em></h2>
+    <div class="host-wrap">
+      <div class="host-avatar">
+        <img src="https://a0.muscache.com/im/pictures/user/User/original/1d5ce187-20fb-44b2-aa40-56c3ea74df29.jpeg?im_w=240" alt="Subhi" />
+      </div>
+      <div>
+        <div class="host-name">Subhi</div>
+        <div class="host-meta">Hosting since 2026 · Co-hosted by Sahil & Alka</div>
+        <div class="host-bio">Mom to a little girl who fills our world with joy. Together with her dad, we love exploring new places and making memories — turning every trip into a story worth telling. House of ReeKa was built with that same spirit: patience, care, and genuine love for hospitality. Every guest should feel truly at home.</div>
+        <div class="host-stats">
+          <div class="host-stat"><strong>100%</strong><span>Response rate</span></div>
+          <div class="host-stat"><strong>&lt; 1 hr</strong><span>Response time</span></div>
+          <div class="host-stat"><strong>2026</strong><span>Hosting since</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="eyebrow">Book your stay</div>
+    <h2>Ready to experience<br><em>House of ReeKa?</em></h2>
+    <p>Space, calm, and comfort in Gurugram's best-connected neighbourhood. Available for families, groups, and business travellers.</p>
+    <div class="cta-btns">
+      <button class="btn-primary" onclick="window.open('https://www.airbnb.co.in/rooms/1649839020830181649','_blank')">Book on Airbnb</button>
+      <button class="btn-outline" onclick="window.open('https://www.airbnb.co.in/contact_host/1649839020830181649/send_message','_blank')">Message the host</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>© 2026 House of ReeKa · Gurugram, Haryana, India</div>
+    <div class="footer-links">
+      <a href="https://www.airbnb.co.in/rooms/1649839020830181649" target="_blank">View on Airbnb</a>
+      <a href="https://www.airbnb.co.in/contact_host/1649839020830181649/send_message" target="_blank">Contact host</a>
+    </div>
+  </footer>
+
+</body>
+</html>
